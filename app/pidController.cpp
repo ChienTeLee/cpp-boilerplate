@@ -9,6 +9,10 @@
 
 #include "pidController.h"
 
+/**
+ * @brief Consturctor for class pidController to initialize parameters
+ * @return none
+ */
 pidController::pidController()
     : Kp(0.0),
       Ki(0.0),

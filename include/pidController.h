@@ -23,6 +23,10 @@
  */
 class pidController {
  public:
+  /**
+   * @brief Consturctor for class pidController to initialize parameters
+   * @return none
+   */
   pidController();
 
   /**
