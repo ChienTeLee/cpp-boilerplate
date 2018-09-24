@@ -7,7 +7,7 @@
 
 Part 1
 
-- Driver: CheinTeLee (Github username: ChienTeLee)
+- Driver: Chein Te Lee (Github username: ChienTeLee)
 - Navigator: Nantha Kumar Sunder (Github username: nantha007)
 
 Part 2
