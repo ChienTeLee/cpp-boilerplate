@@ -4,7 +4,7 @@
 * @author Chien-Te Lee, Nantha Sunder
 * @copyright 2018
 *
-*	Details
+* Details
 */
 
 #include "pidController.h"
@@ -15,8 +15,8 @@
 * @return void
 */
 void pidController::setKp(double inKp) {
-	/*!< implement your code here */
-};
+        /*!< implement your code here */
+}
 
 /**
 * @brief Set the class member Ki
@@ -24,8 +24,8 @@ void pidController::setKp(double inKp) {
 * @return void
 */
 void pidController::setKi(double inKi) {
-	/*!< implement your code here */
-};
+        /*!< implement your code here */
+}
 
 /**
 * @brief Set the class member Kd
@@ -33,8 +33,8 @@ void pidController::setKi(double inKi) {
 * @return void
 */
 void pidController::setKd(double inKd) {
-	/*!< implement your code here */
-};
+        /*!< implement your code here */
+}
 
 /**
 * @brief Set the class member timestep
@@ -42,8 +42,8 @@ void pidController::setKd(double inKd) {
 * @return void
 */
 void pidController::setTimestep(double inTimestep) {
-	/*!< implement your code here */
-};
+        /*!< implement your code here */
+}
 
 /**
 * @brief Implement PID control algorithm
@@ -52,8 +52,8 @@ void pidController::setTimestep(double inTimestep) {
 * @return output speed of PID algorithm
 */
 double pidController::getSpeed(double desiredSpd, double measuredSpd) {
-	/*!< implement your code here */
-	return 0.5;
-};
+        /*!< implement your code here */
+        return 0.5;
+}
 
 

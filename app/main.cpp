@@ -4,18 +4,18 @@
 * @author Chien-Te Lee, Nantha Sunder
 * @copyright 2018
 *
-*	Details
+* Details
 */
 
 #include "pidController.h"
 #include <iostream>
 
 
-int main (){
-	/*!< implement your code here */
-	pidController dummy;
-	std::cout << dummy.getSpeed(0.0, 0.0) << std::endl;
-	return 0;
+int main() {
+        /*!< implement your code here */
+        pidController dummy;
+        std::cout << dummy.getSpeed(0.0, 0.0) << std::endl;
+        return 0;
 }
 
 
