@@ -23,10 +23,59 @@
 */
 class pidController {
  public:
-        double Kp = 0.0;
-        double Ki = 0.0;
-        double Kd = 0.0;
-        double timestep = 1.0;
+        pidController();
+
+        /**
+        * @brief Set the class member Kp
+        * @param inKp is the new value to be assigned to Kp
+        * @return none
+        */
+        void setKp(double inKp);
+
+        /**
+        * @brief Set the class member Ki
+        * @param inKi is the new value to be assigned to Ki
+        * @return none
+        */
+        void setKi(double inKi);
+
+        /**
+        * @brief Set the class member Kd
+        * @param inKd is the new value to be assigned to Kd
+        * @return none
+        */
+        void setKd(double inKd);
+
+        /**
+        * @brief Set the class member timestep
+        * @param inTimestep is the new value to be assigned to timestep
+        * @return none
+        */
+        void setTimestep(double inTimestep);
+
+        /**
+        * @brief Get the class member Kp
+        * @return value of Kp
+        */
+        double getKp();
+
+        /**
+        * @brief Get the class member Ki
+        * @return value of Ki
+        */
+        double getKi();
+
+        /**
+        * @brief Get the class member Kd
+        * @return value of Kd
+        */
+        double getKd();
+
+        /**
+        * @brief Get the class member timestep
+        * @return value of timestep
+        */
+        double getTimestep();
 
         /**
         * @brief Get the class member errCur
@@ -61,6 +110,11 @@ class pidController {
         double findSpeed(double, double);
 
  private:
+        double Kp = 0.0;
+        double Ki = 0.0;
+        double Kd = 0.0;
+        double timestep = 1.0;
+
         double errCur = 0.0;
         double errPrev = 0.0;
         double errInteg = 0.0;

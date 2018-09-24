@@ -8,24 +8,29 @@
 */
 
 #include <gtest/gtest.h>
-#include <pidController.h>
+#include "pidController.h"
 
-TEST(pidControllerTest, pidControllerOutputValue) {
-        double initialSpd = 10.0;
-        double desiredSpd = 100.0;
-        double Step = 2000;
-
+TEST(pidControllerTest, pidControllerCheckInitialValue) {
         pidController controller;
 
-        controller.Kp = 0.1;
-        controller.Ki = 0.01;
-        controller.Kd = 0.2;
-        controller.timestep = 1.0;
+        EXPECT_EQ(0.0, controller.getKp());
+        EXPECT_EQ(0.0, controller.getKi());
+        EXPECT_EQ(0.0, controller.getKd());
+        EXPECT_EQ(1.0, controller.getTimestep());
+        EXPECT_EQ(0.0, controller.getErrCur());
+        EXPECT_EQ(0.0, controller.getErrPrev());
+        EXPECT_EQ(0.0, controller.getErrInteg());
+        EXPECT_EQ(0.0, controller.getErrDeriv());
 
-        double measuredSpd = initialSpd;
-        for (int i = 1; i < Step; i++) {
-                measuredSpd = controller.findSpeed(desiredSpd, measuredSpd);
-        }
+        controller.setKp(0.1);
+        controller.setKi(0.01);
+        controller.setKd(0.2);
+        controller.setTimestep(1.0);
 
-        EXPECT_FLOAT_EQ(100.0, measuredSpd);
+        EXPECT_EQ(0.1, controller.getKp());
+        EXPECT_EQ(0.01, controller.getKi());
+        EXPECT_EQ(0.2, controller.getKd());
+        EXPECT_EQ(1.0, controller.getTimestep());
+
+        EXPECT_NE(0.5, controller.findSpeed(100.0, 10.0));
 }
