@@ -1,23 +1,21 @@
+/**
+* @file main.cpp
+* @brief This is a simple program using PIP controller.
+* @author Chien-Te Lee, Nantha Sunder
+* @copyright 2018
+*
+*	Details
+*/
 
-// sample pid program
-
+#include "pidController.h"
 #include <iostream>
-
-class pidController {
-public:
-	double findVelocity(double, double);
-private:
-	double Kp, Ki, Kd;
-};
-
-double pidController::findVelocity(double desiredVelocity, double currentVelocity) {
-	return 0.5;
-};
 
 
 int main (){
-	pidController controller1;
-	std::cout << controller1.findVelocity(0.0, 0.0) << std::endl;
+	/*!< implement your code here */
+	pidController dummy;
+	std::cout << dummy.getSpeed(0.0, 0.0) << std::endl;
 	return 0;
 }
+
 
