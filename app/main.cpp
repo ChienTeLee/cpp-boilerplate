@@ -1,7 +1,7 @@
 /**
 * @file main.cpp
 * @brief This is a simple program using PIP controller.
-* @author Chien-Te Lee, Nantha Sunder
+* @author Chien-Te Lee, Nantha Kumar Sunder
 * @copyright 2018
 *
 * Details
@@ -14,7 +14,7 @@
 int main() {
         /*!< implement your code here */
         pidController dummy;
-        std::cout << dummy.getSpeed(0.0, 0.0) << std::endl;
+        std::cout << dummy.findSpeed(0.0, 0.0) << std::endl;
         return 0;
 }
 

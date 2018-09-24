@@ -3,6 +3,18 @@
 [![Coverage Status](https://coveralls.io/repos/github/ChienTeLee/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ChienTeLee/cpp-boilerplate?branch=master)
 ---
 
+## Author
+
+Part 1
+
+- Driver: CheinTeLee (Github username: ChienTeLee)
+- Navigator: Nantha Kumar Sunder (Github username: nantha007)
+
+Part 2
+
+- Driver: 
+- Navigator: 
+
 ## Overview
 
 Simple starter C++ project with:
@@ -12,7 +24,7 @@ Simple starter C++ project with:
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/ChienTeLee/cpp-boilerplate
 cd <path to repository>
 mkdir build
 cd build

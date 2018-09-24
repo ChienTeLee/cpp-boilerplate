@@ -1,3 +1,11 @@
+/**
+* @file main.cpp
+* @brief This file runs all the tests.
+* @author Chien-Te Lee, Nantha Kumar Sunder
+* @copyright 2018
+*
+*	Details
+*/
 #include <gtest/gtest.h>
 
 int main(int argc, char** argv) {

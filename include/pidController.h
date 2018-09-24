@@ -1,7 +1,7 @@
 /**
 * @file pidController.h
 * @brief This is file is declaration of class pidController.
-* @author Chien-Te Lee, Nantha Sunder
+* @author Chien-Te Lee, Nantha Kumar Sunder
 * @copyright 2018
 *
 *	Details
@@ -23,33 +23,34 @@
 */
 class pidController {
  public:
-        /**
-        * @brief Set the class member Kp
-        * @param inKp is newly assigned value to class member kp
-        * @return void
-        */
-        void setKp(double inKp);
+        double Kp = 0.0;
+        double Ki = 0.0;
+        double Kd = 0.0;
+        double timestep = 1.0;
 
         /**
-        * @brief Set the class member Ki
-        * @param inKi is new value assigned to class member ki
-        * @return void
+        * @brief Get the class member errCur
+        * @return value of errCur
         */
-        void setKi(double inKi);
+        double getErrCur();
 
         /**
-        * @brief Set the class member Kd
-        * @param inKd is new value assigned to class member kd
-        * @return void
+        * @brief Get the class member errPrev
+        * @return value of errPrev
         */
-        void setKd(double inKd);
+        double getErrPrev();
 
         /**
-        * @brief Set the class member timestep
-        * @param inTimestep is new value assigned to class member timestep
-        * @return void
+        * @brief Get the class member errInteg
+        * @return value of errInteg
         */
-        void setTimestep(double inTimestep);
+        double getErrInteg();
+
+        /**
+        * @brief Get the class member errDeriv
+        * @return value of errDeriv
+        */
+        double getErrDeriv();
 
         /**
         * @brief Implement PID control algorithm
@@ -57,14 +58,9 @@ class pidController {
         * @param measuredSpd is the measurement of current speed
         * @return output speed of PID algorithm
         */
-        double getSpeed(double, double);
+        double findSpeed(double, double);
 
  private:
-        double Kp = 0.0;
-        double Ki = 0.0;
-        double Kd = 0.0;
-        double timestep = 1.0;
-
         double errCur = 0.0;
         double errPrev = 0.0;
         double errInteg = 0.0;
