@@ -12,8 +12,7 @@ Part 1
 
 Part 2
 
-- Driver: 
-- Navigator: 
+- Driver and  Navigator: [Sarthak Mahajan](https://github.com/smahajan07) 
 
 ## Overview
 
