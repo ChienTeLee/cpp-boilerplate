@@ -5,6 +5,7 @@
  * @copyright 2018
  *
  * Details
+ * Class for a PID controller
  */
 
 #include "pidController.h"
@@ -30,7 +31,7 @@ pidController::pidController()
  * @return none
  */
 void pidController::setKp(double inKp) {
-  /*!< implement your code here */
+  Kp = inKp;
 }
 
 /**
@@ -39,7 +40,7 @@ void pidController::setKp(double inKp) {
  * @return none
  */
 void pidController::setKi(double inKi) {
-  /*!< implement your code here */
+  Ki = inKi;
 }
 
 /**
@@ -48,7 +49,7 @@ void pidController::setKi(double inKi) {
  * @return none
  */
 void pidController::setKd(double inKd) {
-  /*!< implement your code here */
+  Kd = inKd;
 }
 
 /**
@@ -57,7 +58,7 @@ void pidController::setKd(double inKd) {
  * @return none
  */
 void pidController::setTimestep(double inTimestep) {
-  /*!< implement your code here */
+  timestep = inTimestep;
 }
 
 /**
@@ -65,8 +66,7 @@ void pidController::setTimestep(double inTimestep) {
  * @return value of Kp
  */
 double pidController::getKp() {
-  /*!< implement your code here */
-  return 0.5;
+  return Kp;
 }
 
 /**
@@ -74,8 +74,7 @@ double pidController::getKp() {
  * @return value of Ki
  */
 double pidController::getKi() {
-  /*!< implement your code here */
-  return 0.5;
+  return Ki;
 }
 
 /**
@@ -83,8 +82,7 @@ double pidController::getKi() {
  * @return value of Kd
  */
 double pidController::getKd() {
-  /*!< implement your code here */
-  return 0.5;
+  return Kd;
 }
 
 /**
@@ -92,8 +90,7 @@ double pidController::getKd() {
  * @return value of timestep
  */
 double pidController::getTimestep() {
-  /*!< implement your code here */
-  return 0.5;
+  return timestep;
 }
 
 /**
@@ -101,8 +98,7 @@ double pidController::getTimestep() {
  * @return value of errCur
  */
 double pidController::getErrCur() {
-  /*!< implement your code here */
-  return 0.5;
+  return errCur;
 }
 
 /**
@@ -110,8 +106,7 @@ double pidController::getErrCur() {
  * @return value of errPrev
  */
 double pidController::getErrPrev() {
-  /*!< implement your code here */
-  return 0.5;
+  return errPrev;
 }
 
 /**
@@ -119,8 +114,7 @@ double pidController::getErrPrev() {
  * @return value of errInteg
  */
 double pidController::getErrInteg() {
-  /*!< implement your code here */
-  return 0.5;
+  return errInteg;
 }
 
 /**
@@ -128,8 +122,7 @@ double pidController::getErrInteg() {
  * @return value of errDeriv
  */
 double pidController::getErrDeriv() {
-  /*!< implement your code here */
-  return 0.5;
+  return errDeriv;
 }
 
 /**
@@ -139,7 +132,11 @@ double pidController::getErrDeriv() {
  * @return output speed of PID algorithm
  */
 double pidController::findSpeed(double desiredSpd, double measuredSpd) {
-  /*!< implement your code here */
-  return 0.5;
+  double error = desiredSpd - measuredSpd;
+  errInteg = errInteg + error * timestep;
+  errDeriv = (error - errPrev) / timestep;
+  errPrev = error;
+
+  return (Kp * error + Ki * errInteg + Kd * errDeriv);
 }
 
